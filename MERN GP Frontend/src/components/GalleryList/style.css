@@ -1,0 +1,53 @@
+
+.table-container{
+    width:100%;
+}
+
+.g-image-col{
+    width: 20%;
+    padding: 'none';
+    border: 1px solid rgb(255, 30, 0);
+
+}
+
+.g-image-container{
+    width: 20%;
+    display: flex;
+    height: auto;
+    padding: 'none';
+    border: 1px solid rgb(255, 0, 251);
+}
+
+.g-image{
+    width: 100%;
+    border: 1px solid rgb(9, 255, 0);
+    padding: none;
+}
+
+.g-wrap{
+    border: 1px solid red;
+}
+
+
+
+
+.g-title-col{
+    border: 1px solid blue;
+    width: 100px;
+    background-color: antiquewhite;
+
+}
+
+
+
+
+.test3{
+    border: 1px solid green;
+    width: 75%;
+    
+}
+.test4{
+    border: 1px solid orange;
+    min-width: 50px;
+    
+}

@@ -1,0 +1,23 @@
+.upload-btn-wrapper{
+    display: flex;
+}
+.upload-btn-file{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+.upload-btn-file + .upload-btn-label {
+    font-size: 0.6em;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+.upload-btn-file:focus + .upload-btn-label,
+.upload-btn-file + .upload-btn-label:hover  {
+    background-color: #04c4ff;
+    color: white;
+    transition: 0.4s ease;
+}

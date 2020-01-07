@@ -1,0 +1,146 @@
+import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import Dropdown from '../dropdown/Dropdown';
+
+import '../styles/fontStyles.css'
+import './Modal.css'
+
+class Modal extends React.Component {
+    state = {
+        title: '',
+        description: '',
+        galleryItemImage: null
+}
+
+fileSelectHandler = event => {
+    this.setState({
+        galleryItemImage: event.target.files[0]
+    });
+    
+
+    // kolla den här, error när fil valts och sedan tagits bort
+    let reader = new FileReader();
+    reader.onload = (e) => {
+        this.setState({galleryItemImage: e.target.result});
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+onChangeTitle = event => {
+    this.setState({
+        title: event.target.value
+    });
+}
+
+onChangeDescription = event => {
+    this.setState({
+        description: event.target.value
+    });
+}
+
+uploadHandler = async event => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('title', this.state.title);
+    formData.append('description', this.state.description);
+    formData.append('galleryItemImage', this.state.galleryItemImage)
+    const config = {
+        headers: {
+            'content-type':'multipart/form-data'
+        }
+    };
+    await axios.post('http://localhost:5000/gallery', formData, config)
+        .then(response => {
+           if (response.status === 201) {
+                alert('Item Created')
+                this.props.onClose();
+                //clear form on close?    
+           } else {
+               console.log('error creating item')
+           }
+        })
+        .catch(error => {
+            console.log(error.response)
+        })
+};
+
+  render() {
+    if(!this.props.show) {
+      return null;
+    }
+
+    return (
+      <div className="backdrop">
+        <div className="modal">
+          {this.props.children}
+           
+            <form action="/" method="post" encType='multipart/form-data'>
+          
+                    <div className="modal-wrap">
+                        <div className="modal-container">
+                            <div className="modal-image-container"></div>
+                            <div className="modal-image-input">
+                            <label className="form-label">Image:</label>
+                            </div>
+                            <div className="modal-image-info-container"></div>
+                        </div>
+
+                        <div className="modal-container">
+                            <div className="form-field-title">
+                                <label className="form-label">Title:</label>
+                            </div>
+                            <div className="form-field-input">
+                                <input className="form-field" type="text"/>
+                            </div>
+
+                            <div className="form-field-desc">
+                                <label className="form-label">Description:</label>
+                            </div>
+                            <div className="form-field-input">
+                                <textarea 
+                                    rows="7" 
+                                    cols="50" 
+                                    className="form-field-textarea">
+                                </textarea>
+                            </div>
+
+                            <div className="form-field-tags">
+                                <label className="form-label">Tags:</label>
+                                <div className="tags-container"></div>
+
+                                <div className="form-container">
+                                    <div className="button-container">
+                                        <button className="form-button" 
+                                            onClick={this.uploadHandler}>
+                                            Confirm
+                                        </button>
+                                        <button className="form-button" 
+                                            onClick={this.props.onClose}>
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+
+                   
+                    </div>
+                
+
+            </form>
+        </div>
+      </div>
+    );
+  }
+}
+
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  show: PropTypes.bool,
+  children: PropTypes.node
+};
+
+// ReactDOM.render(displayDropdown, document.getElementById('root'));
+export default Modal;

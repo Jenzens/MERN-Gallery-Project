@@ -1,0 +1,6 @@
+.vs
+.NuGet
+*/bin/
+*/obj/
+/packages/
+node_modules

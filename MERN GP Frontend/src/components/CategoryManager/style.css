@@ -1,0 +1,33 @@
+.form-cat-wrap{
+    width:100%;
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 5px;
+}
+.form-category-li{
+    list-style:none;
+    padding: 1px;
+}
+.form-category-item{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    min-width: 0px;
+    list-style:none;
+    border-right: 1px solid #ccc;
+}
+.form-category-label{
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+}
+.form-category-name{
+    padding-left: 5px;
+    padding-right: 5px;
+}

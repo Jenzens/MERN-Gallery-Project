@@ -1,0 +1,231 @@
+.backdrop{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    background: rgba(182, 182, 182, 0.603);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.modal-wrapper{
+    min-width: 400px;
+    width: 70%;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    border:1px solid red;
+    overflow-y: initial !important;
+}
+
+.modal-body{
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(255, 255, 255);
+    overflow-y: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+#modal-body::-webkit-scrollbar-track
+{
+    width: 1em;
+    border-radius: 10px;
+    background-color: rgb(224, 224, 224);
+}
+#modal-body::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+#modal-body::-webkit-scrollbar-thumb
+{
+    border-radius: 0px;
+	background-color: rgb(190, 190, 190);
+}
+
+.modal-header{
+    width: 100%;
+    height:5vh;
+    background-color: slateblue;
+}
+
+
+.form-field-row{
+    width: 90%;
+    min-height: 40px;
+    padding: 10px 0;
+    display: flex;
+}
+.form-field-col{
+    width: 90%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-flow: column;
+}
+.form-field-bottom{
+    width: 90%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border:1px solid salmon;
+}
+
+
+.form-input{
+    width: 100%;
+    height: 40px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.form-field-textarea{
+    width: 90%;
+    min-height: 115px;
+    padding: 10px 0;
+    background-color: white;
+    display: flex;
+}
+.form-textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px 20px;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+.form-field-imagearea{
+    width: 90%;
+    height: 200px;
+    padding: 10px 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.form-imagearea{
+    width: 100%;
+    max-width: 100vh;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.form-imagebox{
+    width: 50%;
+    min-height: 150px;
+    border-radius: 5px;
+    border: 1.1px dotted rgb(80, 80, 80);
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-imagebox img{
+    max-width: 100%;
+    max-height: 150px;
+}
+
+
+.form-field-tags{
+    width: 90%;
+    min-height: auto;
+    max-height: 200px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    /* border: 1px solid blue; */
+}
+
+.form-tagsarea{
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-flow: wrap;
+    overflow-y: scroll;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.form-tag-li{
+    list-style:none;
+    padding: 1px;
+    
+}
+.form-tag-item{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    list-style:none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-tag-item:hover{
+    background-color: #04c4ff;
+    transition: 0.4s ease;
+}
+.form-tag-name{
+    padding-left: 10px;
+    padding-right: 5px;
+}
+.form-tag-checkbox{
+    width: 15px;
+    height: 15px;
+}
+
+.form-catarea{
+    width:100%;
+    display: flex;
+    flex-flow: wrap;
+}
+.form-category-li{
+    list-style:none;
+    padding: 1px;
+}
+.form-category-item{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    min-width: 0px;
+    list-style:none;
+    border-right: 1px solid #ccc;
+}
+.form-category-name{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.form-button{
+
+}
+
+
+
+
+
+
+
+
